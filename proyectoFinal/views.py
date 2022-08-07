@@ -10,4 +10,7 @@ def prueba(request):
 def resenas(request):
     return render(request, 'resenas.html', context={})
 
+def home(request):
+    return render(request, 'base.html', context={})
+
 

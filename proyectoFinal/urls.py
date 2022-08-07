@@ -16,13 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from proyectoFinal.views import prueba, resenas
+from proyectoFinal.views import prueba, resenas, home
 from films.views import create_film
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('prueba/', prueba, name='prueba'),	
     path('resenas/', resenas, name='View de reseñas de las peliculas'),	
-    path('create-film/',create_film, name = 'Create_film')
+    path('create-film/',create_film, name = 'Create_film'),
+    path('home/',home, name = 'template base')
 ]
 
