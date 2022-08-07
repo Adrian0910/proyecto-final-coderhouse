@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from proyectoFinal.views import prueba, resenas
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('prueba/', prueba, name='prueba'),	
+    path('resenas/', resenas, name='View de reseñas de las peliculas'),	
 ]
+
