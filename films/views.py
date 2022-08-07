@@ -1,6 +1,7 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
 from films.forms import Form_films
+from films.models import Film
+
 
 def create_film(request):
     
@@ -16,9 +17,8 @@ def create_film(request):
                 actors = form.cleaned_data['actors'],
                 description = form.cleaned_data['description'],
                 
-            )
-            pass 
-            return redirect(Form_films)
+            )  
+            return redirect (list_films)
 
     elif request.method == 'GET':
         form = Form_films()
@@ -27,6 +27,17 @@ def create_film(request):
 
 
 
+def list_films(request):
+    films = Film.objects.all()
+    context = {
+        'films': films
+    }
+    return render(request, 'list_films.html', context=context)
+
+#def search(request):
+    search = request.GET['search']
+    products = Products.objects.filter(name__icontains=search)  #Trae los que cumplan la condicion
+    context = {'products':products}
+    return render(request, 'products/search_product.html', context=context)
 
     
-
