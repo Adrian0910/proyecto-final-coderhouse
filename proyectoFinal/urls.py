@@ -18,6 +18,9 @@ from django.urls import path
 
 from proyectoFinal.views import prueba, resenas, home
 from films.views import create_film
+from proyectoFinal.views import prueba, resenas
+from films.views import create_film, list_films
+from tv_shows.views import create_tv_show
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +28,8 @@ urlpatterns = [
     path('resenas/', resenas, name='View de reseñas de las peliculas'),	
     path('create-film/',create_film, name = 'Create_film'),
     path('home/',home, name = 'template base')
+    path('list-films/',list_films, name = 'list_films'),
+    path('create-tv-show/',create_tv_show, name = 'create_tv_show'),
+
 ]
 
