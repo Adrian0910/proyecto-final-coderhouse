@@ -1,11 +1,11 @@
-{% for f in list_films %}
 
-<h1>Name{{f.name}}</h1>
-<h2>Price {{f.price}}</h2>
-<h2>Year {{f.year}}</h2>
-<h2>Director {{f.director}}</h2>
-<h2>Actors {{f.actors}}</h2>
-<h2>Description {{f.description}}</h2>
+{% for f in films %}
 
+<h1>Name: {{f.name}}</h1>
+<h2>Price: {{f.price}}</h2>
+<h2>Year: {{f.year}}</h2>
+<h2>Director: {{f.director}}</h2>
+<h2>Actors: {{f.actors}}</h2>
+<h2>Description: {{f.description}}</h2>
 
 {% endfor %} 
