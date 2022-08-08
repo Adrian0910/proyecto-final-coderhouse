@@ -1,11 +1,13 @@
 
+from email.policy import HTTP
+from http.client import HTTPResponse
 from django.http import HttpResponse
 
-from django.shortcuts import render #render de htmls
+from django.shortcuts import render
+
+#from proyectoFinal.films.models import Film
 
 
-def prueba(request):
-    return HttpResponse("Hola mundo")
 
 def resenas(request):
     return render(request, 'reviews-list.html', context={})
