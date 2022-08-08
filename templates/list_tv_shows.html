@@ -8,16 +8,13 @@
 <body>
     {% extends 'base.html' %}
     {% block titulo %}
-    Películas
+    Series
     {% endblock %}
 
 
     {% block contenido_que_cambia %}
-    <h1>Poster: {{tv_show}}</h1>
-    <h1>Poster: {{films}}</h1>
-    <h1>Poster: {{Films}}</h1>
     <div class="row m-3 p-4">
-        {% for f in tv_show %}
+        {% for f in tv_shows %}
 
         <h1>Poster: {{f.poster}}</h1>
         <h1>Name: {{f.name}}</h1>

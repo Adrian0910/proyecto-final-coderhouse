@@ -8,7 +8,7 @@ def prueba(request):
     return HttpResponse("Hola mundo")
 
 def resenas(request):
-    return render(request, 'resenas.html', context={})
+    return render(request, 'reviews-list.html', context={})
 
 def home(request):
     return render(request, 'base.html', context={})
