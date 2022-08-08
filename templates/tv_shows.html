@@ -1,12 +1,22 @@
+{% extends 'base.html' %}
+{% block titulo %}
+Register new show
+{% endblock %}
+
+
+{% block contenido_que_cambia %}
+<p>Hola desde tv_shows</p>
 <form action="" method="POST">
     {% csrf_token %}
-    
+
     <table>
-    
+
         {{form.as_table}}
-    
+
     </table>
-    
+
     <p><input type="submit" value="Enviar"></p>
-    
-    </form>
+
+</form>
+
+{% endblock %}

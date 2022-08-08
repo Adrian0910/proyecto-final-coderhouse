@@ -24,8 +24,7 @@ from tv_shows.views import create_tv_show, list_tv_shows
 from reviews.views import create_review
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('prueba/', prueba, name='prueba'),	
+    path('admin/', admin.site.urls),	
     path('resenas/', resenas, name='View de reseñas de las peliculas'),	
     path('create-film/',create_film, name = 'Create_film'),
     path('home/',home, name = 'template base'),
