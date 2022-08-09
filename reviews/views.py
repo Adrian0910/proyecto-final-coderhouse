@@ -4,24 +4,23 @@ from reviews.models import Reviews
 
 
 def create_review(request):
-    
+
     if request.method == 'POST':
         form = Form_reviews(request.POST)
 
         if form.is_valid():
             Reviews.objects.create(
-                name = form.cleaned_data['name'],
-                rating = form.cleaned_data['rating'],
-                review = form.cleaned_data['review'],
-                
-            )  
+                name=form.cleaned_data['name'],
+                rating=form.cleaned_data['rating'],
+                review=form.cleaned_data['review'],
+
+            )
             return redirect (list_reviews)
 
     elif request.method == 'GET':
         form = Form_reviews()
-        context = {'form':form}
+        context = {'form': form}
         return render(request, 'reviews.html', context=context)
-
 
 
 def list_reviews(request):
