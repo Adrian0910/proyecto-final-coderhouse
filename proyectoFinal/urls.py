@@ -29,7 +29,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),	
     path('reviews-list/', resenas, name='Reviews'),	
     path('create-film/',create_film, name = 'Create_film'),
-    path('home/',home, name = 'template base'),
+    path('',home, name = 'template base'),
     path('list-films/',list_films, name = 'list_films'),
     path('create-tv-show/',create_tv_show, name = 'create_tv_show'),
     path('list-tv-shows/',list_tv_shows, name = 'list_tv_shows'),
