@@ -50,6 +50,20 @@
         {% endfor %}
     </div>
 
+    <div class="m-3 p-4">
+        {% for R in reviews %}
+        <div class="card m-3" style="width: 20rem;">
+            <img class="card-img-top" src="https://i.ytimg.com/vi/BCDEOoNYW18/maxresdefault.jpg"
+                alt="El increíble castillo vagabundo">
+            <div class="card-body">
+                <p class="card-text">Name: {{R.name}}</p>
+                <p class="card-text">Price: {{R.rating}}</p>
+                <p class="card-text">Year: {{R.review}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
 </div>
     {% endblock %}
 
