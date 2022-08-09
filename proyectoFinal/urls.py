@@ -20,8 +20,10 @@ from proyectoFinal.views import resenas, home
 from films.views import create_film
 from proyectoFinal.views import resenas
 from films.views import create_film, list_films
-from tv_shows.views import create_tv_show, list_tv_shows, search_catalog
+from tv_shows.views import create_tv_show, list_tv_shows
 from reviews.views import create_review, list_reviews
+from proyectoFinal.views import search_catalog
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),	

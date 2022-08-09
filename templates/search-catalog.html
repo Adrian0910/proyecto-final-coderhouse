@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
- 
+
 <body>
     {% extends 'base.html' %}
     {% block titulo %}
@@ -14,22 +14,42 @@
 
     {% block contenido_que_cambia %}
 
-<div class="row m-3 p-4">
-    {% for f in catalog %}
-    <div class="card m-3" style="width: 20rem;">
-        <img class="card-img-top" src="https://i.ytimg.com/vi/BCDEOoNYW18/maxresdefault.jpg"
-            alt="El increíble castillo vagabundo">
-        <div class="card-body">
-            <p class="card-text">Name: {{f.name}}</p>
-            <p class="card-text">Price: {{f.price}}</p>
-            <p class="card-text">Year: {{f.year}}</p>
-            <p class="card-text">Director: {{f.director}}</p>
-            <p class="card-text">Actors: {{f.actors}}</p>
-            <p class="card-text">Description: {{f.description}}</p>
+    <!-- Aquí ponemos los filtros -->
+
+    <div class="row m-3 p-4">
+        {% for S in catalog %}
+        <div class="card m-3" style="width: 20rem;">
+            <img class="card-img-top" src="https://i.ytimg.com/vi/BCDEOoNYW18/maxresdefault.jpg"
+                alt="El increíble castillo vagabundo">
+            <div class="card-body">
+                <p class="card-text">Name: {{S.name}}</p>
+                <p class="card-text">Price: {{S.price}}</p>
+                <p class="card-text">Year: {{S.year}}</p>
+                <p class="card-text">Director: {{S.director}}</p>
+                <p class="card-text">Actors: {{S.actors}}</p>
+                <p class="card-text">Description: {{S.description}}</p>
+            </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
+
+    <div class="row m-3 p-4">
+        {% for M in catalogM %}
+        <div class="card m-3" style="width: 20rem;">
+            <img class="card-img-top" src="https://i.ytimg.com/vi/BCDEOoNYW18/maxresdefault.jpg"
+                alt="El increíble castillo vagabundo">
+            <div class="card-body">
+                <p class="card-text">Name: {{M.name}}</p>
+                <p class="card-text">Price: {{M.price}}</p>
+                <p class="card-text">Year: {{M.year}}</p>
+                <p class="card-text">Director: {{M.director}}</p>
+                <p class="card-text">Actors: {{M.actors}}</p>
+                <p class="card-text">Description: {{M.description}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
 
     {% endblock %}
 

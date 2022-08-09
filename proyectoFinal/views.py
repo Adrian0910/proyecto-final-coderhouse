@@ -1,10 +1,7 @@
 
-from email.policy import HTTP
-from http.client import HTTPResponse
-from django.http import HttpResponse
-
 from django.shortcuts import render
-
+from films.models import Film
+from tv_shows.models import Tv_shows
 #from proyectoFinal.films.models import Film
 
 
@@ -14,5 +11,15 @@ def resenas(request):
 
 def home(request):
     return render(request, 'base.html', context={})
+
+def search_catalog(request):
+    search = request.GET['search']
+    catalog = Tv_shows.objects.filter(name__icontains=search)
+    catalogM = Film.objects.filter(name__icontains=search)
+    context = {
+        'catalog':catalog,
+        'catalogM':catalogM,
+        }
+    return render(request, 'search-catalog.html', context=context)
 
 

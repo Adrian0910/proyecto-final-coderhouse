@@ -34,10 +34,6 @@ def list_films(request):
     }
     return render(request, 'list_films.html', context=context)
 
-#def search(request):
-    search = request.GET['search']
-    products = Products.objects.filter(name__icontains=search)  #Trae los que cumplan la condicion
-    context = {'products':products}
-    return render(request, 'products/search_product.html', context=context)
+
 
     
