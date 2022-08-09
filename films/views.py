@@ -1,3 +1,4 @@
+from msilib.schema import Media
 from django.shortcuts import render, redirect
 from films.forms import Form_films
 from films.models import Film
@@ -10,7 +11,6 @@ def create_film(request):
 
         if form.is_valid():
             Film.objects.create(
-                poster = form.cleaned_data['poster'],
                 name = form.cleaned_data['name'],
                 price = form.cleaned_data['price'],
                 year = form.cleaned_data['year'],

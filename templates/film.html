@@ -4,9 +4,9 @@ Register new film
 {% endblock %}
 {% block contenido_que_cambia %}
 
-<form action="" method="POST" enctype = 'multipart/form-data'>
+<form action="" method="POST" >
     {% csrf_token %}
-    <img class="card-img-top" src="{{post.poster.url}}">
+    
     <table>
 
         {{form.as_table}}
