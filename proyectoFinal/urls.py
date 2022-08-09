@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.conf import settings
+from django.conf.urls.static import static
 from proyectoFinal.views import resenas, home
 from films.views import create_film
 from proyectoFinal.views import resenas
@@ -37,5 +38,5 @@ urlpatterns = [
     path('list-reviews/', list_reviews, name = 'list reviews'),
     path('search-catalog/', search_catalog, name = 'search'),
 
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

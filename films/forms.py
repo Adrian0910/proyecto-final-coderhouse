@@ -1,6 +1,7 @@
 from django import forms
 
 class Form_films(forms.Form):
+    poster = forms.ImageField()
     name = forms.CharField(max_length=40)
     price = forms.FloatField()
     year = forms.FloatField()
