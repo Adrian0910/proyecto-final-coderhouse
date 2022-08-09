@@ -21,7 +21,7 @@ from films.views import create_film
 from proyectoFinal.views import resenas
 from films.views import create_film, list_films
 from tv_shows.views import create_tv_show, list_tv_shows, search_catalog
-from reviews.views import create_review
+from reviews.views import create_review, list_reviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),	
@@ -32,6 +32,7 @@ urlpatterns = [
     path('create-tv-show/',create_tv_show, name = 'create_tv_show'),
     path('list-tv-shows/',list_tv_shows, name = 'list_tv_shows'),
     path('create-review/', create_review, name = 'create_review'),
+    path('list-reviews/', list_reviews, name = 'list reviews'),
     path('search-catalog/', search_catalog, name = 'search'),
 
 ]
