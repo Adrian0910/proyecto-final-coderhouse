@@ -4,17 +4,18 @@ Register new film
 {% endblock %}
 {% block contenido_que_cambia %}
 
-<form action="" method="POST" >
-    {% csrf_token %}
-    
-    <table>
+<div class="m-3 p-4">
+    <form action="" method="POST">
+        {% csrf_token %}
 
-        {{form.as_table}}
+        <table>
 
-    </table>
+            {{form.as_table}}
 
-    <p><input type="submit" value="Enviar"></p>
+        </table>
 
-</form>
+        <p><input type="submit" value="Enviar"></p>
 
+    </form>
+</div>
 {% endblock %}
