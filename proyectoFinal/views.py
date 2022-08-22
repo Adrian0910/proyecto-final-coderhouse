@@ -12,6 +12,9 @@ def home(request):
 def about(request):
     return render(request, 'about.html', context={})
 
+def pages(request):
+    return render(request, 'pages.html', context={})
+
 def resenas(request):
     return render(request, 'reviews-list.html', context={})
 

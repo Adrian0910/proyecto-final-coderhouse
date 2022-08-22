@@ -35,6 +35,9 @@
                     <a class="nav-link" href="/list-reviews/">Reviews</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/pages/">Pages</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/create-review/">Write a review</a>
                 </li>
                 <li class="nav-item">
@@ -48,14 +51,17 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0" action="/search-catalog/" method="GET">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                    name="search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </nav>
 
     {% block contenido_que_cambia %}
-   
+    <div class="p-2 m-2">
+        <p>Hola desde home</p>
+    </div>
     {% endblock %}
 
     <!-- Footer -->
@@ -82,18 +88,18 @@
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4">
-                            We offer: 
+                            We offer:
                         </h6>
                         <p>
-                            <a href= "/list-films/" class="text-reset">Films</a>
+                            <a href="/list-films/" class="text-reset">Films</a>
                         </p>
                         <p>
-                            <a href= "/list-tv-shows/" class="text-reset">TV shows</a>
+                            <a href="/list-tv-shows/" class="text-reset">TV shows</a>
                         </p>
                         <p>
-                            <a href= "/list-reviews/" class="text-reset">Reviews</a>
+                            <a href="/list-reviews/" class="text-reset">Reviews</a>
                         </p>
-                        
+
                     </div>
                     <!-- Grid column -->
 
@@ -106,7 +112,7 @@
                         <p>
                             <a href="#!" class="text-reset">Pricing</a>
                         </p>
-                        
+
                         <p>
                             <a href="#!" class="text-reset">Help</a>
                         </p>
@@ -122,7 +128,7 @@
                             <i class="fas fa-envelope me-3"></i>
                             films@films.com
                         </p>
-                        
+
                     </div>
                     <!-- Grid column -->
                 </div>

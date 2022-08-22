@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from proyectoFinal.views import resenas, home, search_catalog, about
+from proyectoFinal.views import resenas, home, search_catalog, about, pages
 from films.views import create_film
 from films.views import create_film, list_films
 from tv_shows.views import create_tv_show, list_tv_shows
@@ -35,5 +35,6 @@ urlpatterns = [
     path('list-reviews/', list_reviews, name = 'list reviews'),
     path('search-catalog/', search_catalog, name = 'search'),
     path('about/', about, name = 'about'),
+    path('pages/', pages, name = 'pages'),
 ]
 
