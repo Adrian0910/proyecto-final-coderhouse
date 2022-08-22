@@ -15,13 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from proyectoFinal.views import resenas, home
+
+from proyectoFinal.views import resenas, home, search_catalog, about
 from films.views import create_film
-from proyectoFinal.views import resenas
 from films.views import create_film, list_films
 from tv_shows.views import create_tv_show, list_tv_shows
 from reviews.views import create_review, list_reviews
-from proyectoFinal.views import search_catalog
 
 
 urlpatterns = [
@@ -35,6 +34,6 @@ urlpatterns = [
     path('create-review/', create_review, name = 'create_review'),
     path('list-reviews/', list_reviews, name = 'list reviews'),
     path('search-catalog/', search_catalog, name = 'search'),
-
+    path('about/', about, name = 'about'),
 ]
 

@@ -6,12 +6,15 @@ from tv_shows.models import Tv_shows
 #from proyectoFinal.films.models import Film
 
 
+def home(request):
+    return render(request, 'base.html', context={})
+
+def about(request):
+    return render(request, 'about.html', context={})
 
 def resenas(request):
     return render(request, 'reviews-list.html', context={})
 
-def home(request):
-    return render(request, 'base.html', context={})
 
 def search_catalog(request):
     search = request.GET['search']
