@@ -19,7 +19,7 @@ from django.urls import path
 from proyectoFinal.views import resenas, home, search_catalog, about, pages
 from films.views import create_film
 from films.views import create_film, list_films
-from tv_shows.views import create_tv_show, list_tv_shows
+from tv_shows.views import create_tv_show, delete_tv_show, list_tv_shows
 from reviews.views import create_review, list_reviews
 
 
@@ -36,5 +36,6 @@ urlpatterns = [
     path('search-catalog/', search_catalog, name = 'search'),
     path('about/', about, name = 'about'),
     path('pages/', pages, name = 'pages'),
+    path('delete-tv-show/<int:pk>', delete_tv_show, name='delete_tv_show'),
 ]
 

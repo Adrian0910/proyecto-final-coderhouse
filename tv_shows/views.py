@@ -37,3 +37,13 @@ def list_tv_shows(request):
     }
     return render(request, 'list_tv_shows.html', context=context)
 
+
+def delete_tv_show(request, pk):
+    if request.method == 'GET':
+        tv_shows = Tv_shows.objects.get(pk=pk)
+        context = {'tv_shows':tv_shows}
+        return render(request, 'delete_tv_show.html', context=context)
+    elif request.method == 'POST':
+        tv_shows = Tv_shows.objects.get(pk=pk)
+        tv_shows.delete()
+        return redirect(list_tv_shows.html)

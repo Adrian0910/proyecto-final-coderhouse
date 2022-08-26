@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block titulo %}
+Delete TV show
+{% endblock %}
+
+
+{% block contenido_que_cambia %}
+<p>Name: {{tv_shows.name}}</p>
+<p>Price: {{tv_shows.price}}</p>
+<p>Year: {{tv_shows.year}}</p>
+<p>Director: {{tv_shows.director}}</p>
+<p>Actors: {{tv_shows.actors}}</p>
+<p>Description: {{tv_shows.description}}</p>
+
+<form action="" method="POST">
+    {%csrf_token %}
+    <p><input type="submit" value="Delete"></p>
+</form>
+
+{% endblock %}
