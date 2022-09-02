@@ -13,19 +13,30 @@
 
 
     {% block contenido_que_cambia %}
-    <div class="m-2 p-2">
-        <p>Name: {{tv_shows.name}}</p>
-        <p>Price: {{tv_shows.price}}</p>
-        <p>Year: {{tv_shows.year}}</p>
-        <p>Director: {{tv_shows.director}}</p>
-        <p>Actors: {{tv_shows.actors}}</p>
-        <p>Description: {{tv_shows.description}}</p>
 
-        <form action="" method="POST">
-            {%csrf_token %}
-            <p><input type="submit" value="Delete"></p>
-        </form>
+    <h1 class="d-flex justify-content-center">Delete TV show</h1>
+
+    <div class="row m-2 p-3 d-flex justify-content-center">
+
+        <div class="card" style="width: 20rem;">
+            <img class="card-img-top"
+                src='https://img.freepik.com/free-vector/cinema-elements-set_74855-15362.jpg?w=826&t=st=1660076293~exp=1660076893~hmac=7fe185f051eb21b938fb81fc77565fe7eb928e7a6524a9bcf8151a006c1305a0'>
+            <div class="card-body">
+                <p>Name: {{tv_shows.name}}</p>
+                <p>Price: {{tv_shows.price}}</p>
+                <p>Year: {{tv_shows.year}}</p>
+                <p>Director: {{tv_shows.director}}</p>
+                <p>Actors: {{tv_shows.actors}}</p>
+                <p>Description: {{tv_shows.description}}</p>
+
+                <form action="" method="POST">
+                    {%csrf_token %}
+                    <p><input class="btn btn-danger" type="submit" value="Delete"></p>
+                </form>
+            </div>
+        </div>
     </div>
+
     {% endblock %}
 </body>
 
