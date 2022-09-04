@@ -4,35 +4,39 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
- 
+
 <body>
     {% extends 'base.html' %}
     {% block titulo %}
-    Reviews
+    Delete review
     {% endblock %}
 
 
     {% block contenido_que_cambia %}
 
-<div class="row m-3 p-4">
-    {% for r in reviews %}
-    <div class="card m-3" style="width: 20rem;">
-        <img class="card-img-top" src= 'https://img.freepik.com/free-vector/cinema-elements-set_74855-15362.jpg?w=826&t=st=1660076293~exp=1660076893~hmac=7fe185f051eb21b938fb81fc77565fe7eb928e7a6524a9bcf8151a006c1305a0'>
-        <div class="card-body">
-            <p class="card-text">Name: {{r.name}}</p>
-            <p class="card-text">Rating: {{r.rating}}</p>
-            <p class="card-text">Review: {{r.review}}</p>
-            <a href="#" class= "btn btn-primary" > Edit </a>
-            <a href="/delete-review/{{f.id}}" class= "btn btn-danger" > Delete </a>
-           
-        </div>
+    <h1 class="d-flex justify-content-center">Delete review</h1>
+
+    <div class="row m-2 p-3 d-flex justify-content-center">
+
+        <div class="card" style="width: 20rem;">
+            <img class="card-img-top"
+                src='https://img.freepik.com/free-vector/cinema-elements-set_74855-15362.jpg?w=826&t=st=1660076293~exp=1660076893~hmac=7fe185f051eb21b938fb81fc77565fe7eb928e7a6524a9bcf8151a006c1305a0'>
+            <div class="card-body">
+                <p>Name: {{reviews.name}}</p>
+                <p>Rating: {{reviews.rating}}</p>
+                <p>Review: {{reviews.review}}</p>
+
+                <form action="" method="POST">
+                    {%csrf_token %}
+                    <p><input class="btn btn-danger" type="submit" value="Delete"></p>
+                </form>
+            </div>
+        </div> 
     </div>
-    {% endfor %}
-</div>
 
     {% endblock %}
-
 </body>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
 </script>

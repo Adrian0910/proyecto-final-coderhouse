@@ -29,3 +29,13 @@ def list_reviews(request):
         'reviews': reviews
     }
     return render(request, 'list_reviews.html', context=context)
+
+def delete_review(request, pk):
+    if request.method == 'GET':
+        reviews = Reviews.objects.get(pk=pk)
+        context = {'reviews': reviews}
+        return render(request, 'delete_review.html', context=context)
+    elif request.method == 'POST':
+        reviews = Reviews.objects.get(pk=pk)
+        Reviews.delete()
+        return redirect(list_reviews)

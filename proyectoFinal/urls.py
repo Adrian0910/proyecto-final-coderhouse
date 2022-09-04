@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.conf.urls.static import static
+from django.conf import settings
 from proyectoFinal.views import resenas, home, search_catalog, about, pages
 from films.views import create_film
-from films.views import create_film, list_films
-from tv_shows.views import create_tv_show, delete_tv_show, list_tv_shows
-from reviews.views import create_review, list_reviews
+from films.views import create_film, list_films,delete_film
+from tv_shows.views import create_tv_show, delete_tv_show, list_tv_shows, update_tv_show
+from reviews.views import create_review, delete_review, list_reviews
 
 
 urlpatterns = [
@@ -37,5 +38,9 @@ urlpatterns = [
     path('about/', about, name = 'about'),
     path('pages/', pages, name = 'pages'),
     path('delete-tv-show/<int:pk>', delete_tv_show, name='delete_tv_show'),
-]
+    path('delete-film/<int:pk>', delete_film, name='delete_film'),
+    path('update-tv-show/<int:pk>', update_tv_show, name='update_tv_show'),
+    path('delete-review/<int:pk>', delete_review, name = 'delete_review'),
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -36,5 +36,13 @@ def list_films(request):
     return render(request, 'list_films.html', context=context)
 
 
-
+def delete_film(request, pk):
+    if request.method == 'GET':
+        film = Film.objects.get(pk=pk)
+        context = {'film': film}
+        return render(request, 'delete_film.html', context=context)
+    elif request.method == 'POST':
+        film = Film.objects.get(pk=pk)
+        film.delete()
+        return redirect(list_films)
     
