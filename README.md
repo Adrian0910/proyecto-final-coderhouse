@@ -1,7 +1,7 @@
 # Web de películas creada con Django
 ## Proyecto final coderhouse 
 
-Esta es la primera entrega del proyecto final de CoderHouse del curso de programación en Python. 
+Este es el Proyecto final del curso de programación en Python en Coderhouse. 
 
 El equipo de trabajo está conformado por **Adrián Santander Ibarra** y **Agustina López Tejera**. 
 
