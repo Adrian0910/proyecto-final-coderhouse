@@ -41,8 +41,8 @@ urlpatterns = [
     path('delete-review/<int:pk>', delete_review, name = 'delete_review'),
     path('detail-film/<int:pk>', Detail_film.as_view(), name='Detail_film'),
     path('detail-review/<int:pk>', Detail_review.as_view(), name='Detail_review'),
-    path('users/', include('users.urls')),
     path('detail-tv-show/<int:pk>', Detail_tv_show.as_view(), name='Detail_tv_show'),
+    path('users/', include('users.urls')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
