@@ -14,20 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-from proyectoFinal.views import resenas, home, search_catalog, about, pages
-from films.views import create_film
+from proyectoFinal.views import resenas, index, search_catalog, about, pages
 from films.views import create_film, list_films,delete_film, Detail_film 
 from tv_shows.views import create_tv_show, delete_tv_show, list_tv_shows, update_tv_show
 from reviews.views import create_review, delete_review, list_reviews, Detail_review
 
 urlpatterns = [
+    path('', index, name = 'index'),
     path('admin/', admin.site.urls),	
     path('reviews-list/', resenas, name='Reviews'),	
     path('create-film/',create_film, name = 'Create_film'),
-    path('',home, name = 'template base'),
     path('list-films/',list_films, name = 'list_films'),
     path('create-tv-show/',create_tv_show, name = 'create_tv_show'),
     path('list-tv-shows/',list_tv_shows, name = 'list_tv_shows'),
@@ -41,7 +40,8 @@ urlpatterns = [
     path('update-tv-show/<int:pk>', update_tv_show, name='update_tv_show'),
     path('delete-review/<int:pk>', delete_review, name = 'delete_review'),
     path('detail-film/<int:pk>', Detail_film.as_view(), name='Detail_film'),
-    path('detail-review/<int:pk>', Detail_review.as_view(), name='Detail_review')
+    path('detail-review/<int:pk>', Detail_review.as_view(), name='Detail_review'),
+    path('users/', include('users.urls')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

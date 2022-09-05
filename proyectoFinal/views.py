@@ -6,8 +6,8 @@ from tv_shows.models import Tv_shows
 #from proyectoFinal.films.models import Film
 
 
-def home(request):
-    return render(request, 'base.html', context={})
+def index(request):
+    return render(request, 'index.html', context={})
 
 def about(request):
     return render(request, 'about.html', context={})
