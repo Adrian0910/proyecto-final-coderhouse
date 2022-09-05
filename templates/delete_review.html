@@ -25,13 +25,13 @@
                 <p>Name: {{reviews.name}}</p>
                 <p>Rating: {{reviews.rating}}</p>
                 <p>Review: {{reviews.review}}</p>
-
+                
                 <form action="" method="POST">
                     {%csrf_token %}
                     <p><input class="btn btn-danger" type="submit" value="Delete"></p>
                 </form>
             </div>
-        </div> 
+        </div>
     </div>
 
     {% endblock %}

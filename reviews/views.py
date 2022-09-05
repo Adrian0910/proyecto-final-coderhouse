@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from reviews.forms import Form_reviews
 from reviews.models import Reviews
-
+from django.views.generic import DetailView, DeleteView
 
 def create_review(request):
 
@@ -37,5 +37,16 @@ def delete_review(request, pk):
         return render(request, 'delete_review.html', context=context)
     elif request.method == 'POST':
         reviews = Reviews.objects.get(pk=pk)
-        Reviews.delete()
-        return redirect(list_reviews)
+        reviews.delete()
+    
+        return redirect (list_reviews)
+    
+"""
+class Delete_review(DeleteView):
+    model = Reviews
+    template_name = 'delete_review.html'
+    success_url: list_reviews
+"""
+class Detail_review(DetailView):
+    model = Reviews
+    template_name= 'detail_review.html'

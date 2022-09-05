@@ -22,8 +22,9 @@
             <p class="card-text">Name: {{r.name}}</p>
             <p class="card-text">Rating: {{r.rating}}</p>
             <p class="card-text">Review: {{r.review}}</p>
+            <a href="/detail-review/{{r.id}}" class= "btn btn-primary" > Details </a>
             <a href="#" class= "btn btn-primary" > Edit </a>
-            <a href="/delete-review/{{f.id}}" class= "btn btn-danger" > Delete </a>
+            <a href="/delete-review/{{r.id}}" class= "btn btn-danger" > Delete </a>
            
         </div>
     </div>

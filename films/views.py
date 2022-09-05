@@ -2,7 +2,7 @@ from msilib.schema import Media
 from django.shortcuts import render, redirect
 from films.forms import Form_films
 from films.models import Film
-
+from django.views.generic import DetailView
 
 def create_film(request):
     
@@ -45,4 +45,7 @@ def delete_film(request, pk):
         film = Film.objects.get(pk=pk)
         film.delete()
         return redirect(list_films)
-    
+
+class Detail_film(DetailView):
+    model = Film
+    template_name= 'detail_film.html'
