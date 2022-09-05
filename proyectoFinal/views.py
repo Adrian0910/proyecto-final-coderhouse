@@ -3,6 +3,7 @@ from django.shortcuts import render
 from films.models import Film
 from reviews.models import Reviews
 from tv_shows.models import Tv_shows
+from django.contrib.auth.mixins import LoginRequiredMixin
 #from proyectoFinal.films.models import Film
 
 

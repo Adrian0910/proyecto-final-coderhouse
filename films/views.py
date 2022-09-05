@@ -3,7 +3,11 @@ from django.shortcuts import render, redirect
 from films.forms import Form_films
 from films.models import Film
 from django.views.generic import DetailView
+from django.contrib.auth.decorators import login_required
 
+
+
+@login_required
 def create_film(request):
     
     if request.method == 'POST':
@@ -36,7 +40,7 @@ def list_films(request):
     }
     return render(request, 'list_films.html', context=context)
 
-
+@login_required
 def delete_film(request, pk):
     if request.method == 'GET':
         film = Film.objects.get(pk=pk)
@@ -51,6 +55,7 @@ class Detail_film(DetailView):
     model = Film
     template_name= 'detail_film.html'
 
+@login_required
 def update_film(request, pk):
     if request.method == 'POST':
         form = Form_films(request.POST)

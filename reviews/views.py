@@ -2,7 +2,10 @@ from django.shortcuts import render, redirect
 from reviews.forms import Form_reviews
 from reviews.models import Reviews
 from django.views.generic import DetailView, DeleteView
+from django.contrib.auth.decorators import login_required
 
+
+@login_required
 def create_review(request):
 
     if request.method == 'POST':
@@ -31,6 +34,7 @@ def list_reviews(request):
     }
     return render(request, 'list_reviews.html', context=context)
 
+@login_required
 def delete_review(request, pk):
     if request.method == 'GET':
         reviews = Reviews.objects.get(pk=pk)
@@ -47,6 +51,7 @@ class Detail_review(DetailView):
     model = Reviews
     template_name= 'detail_review.html'
 
+@login_required
 def update_review(request, pk):
     if request.method == 'POST':
         form = Form_reviews(request.POST)
