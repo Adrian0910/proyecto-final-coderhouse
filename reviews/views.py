@@ -10,6 +10,7 @@ def create_review(request):
 
         if form.is_valid():
             Reviews.objects.create(
+                image=form.cleaned_data['image'],
                 name=form.cleaned_data['name'],
                 rating=form.cleaned_data['rating'],
                 review=form.cleaned_data['review'],
@@ -41,12 +42,29 @@ def delete_review(request, pk):
     
         return redirect (list_reviews)
     
-"""
-class Delete_review(DeleteView):
-    model = Reviews
-    template_name = 'delete_review.html'
-    success_url: list_reviews
-"""
+
 class Detail_review(DetailView):
     model = Reviews
     template_name= 'detail_review.html'
+
+def update_review(request, pk):
+    if request.method == 'POST':
+        form = Form_reviews(request.POST)
+        if form.is_valid():
+            reviews = Reviews.objects.get(id=pk)
+            reviews.name = form.cleaned_data['name']
+            reviews.rating = form.cleaned_data['rating']
+            reviews.review = form.cleaned_data['review']
+           
+            return redirect(list_reviews)
+
+    elif request.method == 'GET':
+        reviews= Reviews.objects.get(id=pk)
+
+        form = Form_reviews(initial={
+            'name': reviews.name,
+            'rating': reviews.rating,
+            'review': reviews.review,
+            })
+        context = {'form': form}
+        return render(request, 'update_review.html', context=context)

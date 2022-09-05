@@ -11,6 +11,7 @@ def create_film(request):
 
         if form.is_valid():
             Film.objects.create(
+                image = form.cleaned_data['image'],
                 name = form.cleaned_data['name'],
                 price = form.cleaned_data['price'],
                 year = form.cleaned_data['year'],

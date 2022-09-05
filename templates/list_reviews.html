@@ -17,13 +17,19 @@
 <div class="row m-3 p-4">
     {% for r in reviews %}
     <div class="card m-3" style="width: 20rem;">
-        <img class="card-img-top" src= 'https://img.freepik.com/free-vector/cinema-elements-set_74855-15362.jpg?w=826&t=st=1660076293~exp=1660076893~hmac=7fe185f051eb21b938fb81fc77565fe7eb928e7a6524a9bcf8151a006c1305a0'>
+
+        {% if reviews.image %}
+        <img src="{{reviews.image.url}}" class="card-img-top" alt="...">
+        {% else %}
+        <img src="https://img.freepik.com/free-vector/cinema-elements-set_74855-15362.jpg?w=826&t=st=1660076293~exp=1660076893~hmac=7fe185f051eb21b938fb81fc77565fe7eb928e7a6524a9bcf8151a006c1305a0" class="card-img-top" alt="...">
+        {% endif %}
+       
         <div class="card-body">
             <p class="card-text">Name: {{r.name}}</p>
             <p class="card-text">Rating: {{r.rating}}</p>
             <p class="card-text">Review: {{r.review}}</p>
             <a href="/detail-review/{{r.id}}" class= "btn btn-primary" > Details </a>
-            <a href="#" class= "btn btn-primary" > Edit </a>
+            <a href="/update-review/{{r.id}}" class= "btn btn-primary" > Edit </a>
             <a href="/delete-review/{{r.id}}" class= "btn btn-danger" > Delete </a>
            
         </div>
