@@ -20,7 +20,7 @@ from django.conf import settings
 from proyectoFinal.views import resenas, index, search_catalog, about, pages
 from films.views import create_film, list_films,delete_film,update_film, Detail_film 
 from tv_shows.views import create_tv_show, delete_tv_show, list_tv_shows, update_tv_show, Detail_tv_show
-from reviews.views import create_review, delete_review, list_reviews, Detail_review
+from reviews.views import create_review, delete_review, list_reviews, update_review, Detail_review
 
 urlpatterns = [
     path('', index, name = 'index'),
@@ -47,6 +47,7 @@ urlpatterns = [
 
     path('update-tv-show/<int:pk>', update_tv_show, name='update_tv_show'),
     path('update-film/<int:pk>', update_film, name='update_film'),
+    path('update-review/<int:pk>', update_review, name='update_review'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
