@@ -17,14 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-<<<<<<< HEAD
-from proyectoFinal.views import resenas, home, search_catalog, about, pages
-from films.views import create_film
-from films.views import create_film, list_films,delete_film, update_film, Detail_film
-=======
 from proyectoFinal.views import resenas, index, search_catalog, about, pages
-from films.views import create_film, list_films,delete_film, Detail_film 
->>>>>>> 6f052d08643b9eab5b8cd03eebe7cca1792916d1
+from films.views import create_film, list_films,delete_film,update_film, Detail_film 
 from tv_shows.views import create_tv_show, delete_tv_show, list_tv_shows, update_tv_show, Detail_tv_show
 from reviews.views import create_review, delete_review, list_reviews, Detail_review
 
