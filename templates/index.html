@@ -14,8 +14,12 @@
 
     {% block contenido_que_cambia %}
 
-    <div class="row m-3 p-4">
+    <div class="m-3 p-4">
         <h1>Este es el index</h1>
+        {% if message %}
+        	<h2>{{message}}</h2>
+        {% endif %}
+
     </div>
 
     {% endblock %}
