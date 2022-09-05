@@ -5,13 +5,14 @@ from tv_shows.forms import Form_tv_shows
 from tv_shows.models import Tv_shows
 #from django.contrib.auth.decorators import login_required
 
+
 def create_tv_show(request):
     if request.method == 'POST':
         form = Form_tv_shows(request.POST,  request.FILES)
 
-    if form.is_valid():
+        if form.is_valid():
             Tv_shows.objects.create(
-                image = form.cleaned_data['image'],
+                image=form.cleaned_data['image'],
                 name=form.cleaned_data['name'],
                 price=form.cleaned_data['price'],
                 year=form.cleaned_data['year'],
@@ -26,7 +27,8 @@ def create_tv_show(request):
         form = Form_tv_shows()
         context = {'form': form}
         return render(request, 'tv_shows.html', context=context)
-    #return redirect('login')
+    # return redirect('login')
+
 
 def list_tv_shows(request):
     tv_shows = Tv_shows.objects.all()
@@ -62,16 +64,15 @@ def update_tv_show(request, pk):
 
             return redirect(list_tv_shows)
 
-
     elif request.method == 'GET':
         tv_shows = Tv_shows.objects.get(id=pk)
 
         form = Form_tv_shows(initial={
-                                        'name':tv_shows.name,
-                                        'price':tv_shows.price, 
-                                        'year':tv_shows.year,
-                                        'director':tv_shows.director,
-                                        'actors':tv_shows.actors,
-                                        'description':tv_shows.description, })
-        context = {'form':form}
+            'name': tv_shows.name,
+            'price': tv_shows.price,
+            'year': tv_shows.year,
+            'director': tv_shows.director,
+            'actors': tv_shows.actors,
+            'description': tv_shows.description, })
+        context = {'form': form}
         return render(request, 'update_tv_show.html', context=context)
