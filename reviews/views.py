@@ -51,25 +51,28 @@ class Detail_review(DetailView):
     model = Reviews
     template_name= 'detail_review.html'
 
-@login_required
+
 def update_review(request, pk):
-    if request.method == 'POST':
-        form = Form_reviews(request.POST)
-        if form.is_valid():
-            reviews = Reviews.objects.get(id=pk)
-            reviews.name = form.cleaned_data['name']
-            reviews.rating = form.cleaned_data['rating']
-            reviews.review = form.cleaned_data['review']
-           
-            return redirect(list_reviews)
+    if request.user.is_authenticated and request.user.is_superuser:
+        if request.method == 'POST':
+            form = Form_reviews(request.POST)
+            if form.is_valid():
+                reviews = Reviews.objects.get(id=pk)
+                reviews.name = form.cleaned_data['name']
+                reviews.rating = form.cleaned_data['rating']
+                reviews.review = form.cleaned_data['review']
+            
+                return redirect(list_reviews)
 
-    elif request.method == 'GET':
-        reviews= Reviews.objects.get(id=pk)
+        elif request.method == 'GET':
+            reviews= Reviews.objects.get(id=pk)
 
-        form = Form_reviews(initial={
-            'name': reviews.name,
-            'rating': reviews.rating,
-            'review': reviews.review,
-            })
-        context = {'form': form}
-        return render(request, 'update_review.html', context=context)
+            form = Form_reviews(initial={
+                'name': reviews.name,
+                'rating': reviews.rating,
+                'review': reviews.review,
+                })
+            context = {'form': form}
+            return render(request, 'update_review.html', context=context)
+    else:
+        return redirect('login')
