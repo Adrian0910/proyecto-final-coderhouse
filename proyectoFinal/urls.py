@@ -19,7 +19,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from proyectoFinal.views import resenas, index, search_catalog, about, pages
 from films.views import create_film, list_films,delete_film, Detail_film 
-from tv_shows.views import create_tv_show, delete_tv_show, list_tv_shows, update_tv_show
+from tv_shows.views import create_tv_show, delete_tv_show, list_tv_shows, update_tv_show, Detail_tv_show
 from reviews.views import create_review, delete_review, list_reviews, Detail_review
 
 urlpatterns = [
@@ -42,6 +42,7 @@ urlpatterns = [
     path('detail-film/<int:pk>', Detail_film.as_view(), name='Detail_film'),
     path('detail-review/<int:pk>', Detail_review.as_view(), name='Detail_review'),
     path('users/', include('users.urls')),
+    path('detail-tv-show/<int:pk>', Detail_tv_show.as_view(), name='Detail_tv_show'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

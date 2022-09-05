@@ -3,6 +3,7 @@
 from django.shortcuts import render, redirect
 from tv_shows.forms import Form_tv_shows
 from tv_shows.models import Tv_shows
+from django.views.generic import DetailView
 #from django.contrib.auth.decorators import login_required
 
 
@@ -48,6 +49,9 @@ def delete_tv_show(request, pk):
         tv_shows.delete()
         return redirect(list_tv_shows)
 
+class Detail_tv_show(DetailView):
+    model = Tv_shows
+    template_name= 'detail_tv_show.html'
 
 def update_tv_show(request, pk):
     if request.method == 'POST':
