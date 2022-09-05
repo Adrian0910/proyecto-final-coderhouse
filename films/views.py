@@ -49,3 +49,31 @@ def delete_film(request, pk):
 class Detail_film(DetailView):
     model = Film
     template_name= 'detail_film.html'
+
+def update_film(request, pk):
+    if request.method == 'POST':
+        form = Form_films(request.POST)
+        if form.is_valid():
+            film = Film.objects.get(id=pk)
+            film.name = form.cleaned_data['name']
+            film.price = form.cleaned_data['price']
+            film.year = form.cleaned_data['year']
+            film.director = form.cleaned_data['director']
+            film.actors = form.cleaned_data['actors']
+            film.description = form.cleaned_data['description']
+            film.save()
+
+            return redirect(list_films)
+
+    elif request.method == 'GET':
+        film = Film.objects.get(id=pk)
+
+        form = Form_films(initial={
+            'name': film.name,
+            'price': film.price,
+            'year': film.year,
+            'director': film.director,
+            'actors': film.actors,
+            'description': film.description, })
+        context = {'form': form}
+        return render(request, 'update_film.html', context=context)
