@@ -14,9 +14,11 @@
 
     {% block contenido_que_cambia %}
 
-<div class="row m-3 p-4">
+    <div class="row m-3 p-4">
+
     {% for f in films %}
-    <div class="card m-3" style="width: 20rem;">
+
+    <div class="card m-3" style="width: 20rem;"> 
 
         {% if f.image %}
             <img src="{{f.image.url}}" class="card-img-top" alt="...">
