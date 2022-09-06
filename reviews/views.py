@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 def create_review(request):
 
     if request.method == 'POST':
-        form = Form_reviews(request.POST)
+        form = Form_reviews(request.POST, request.FILES)
 
         if form.is_valid():
             Reviews.objects.create(
