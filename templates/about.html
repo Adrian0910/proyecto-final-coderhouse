@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
- 
+
 <body>
     {% extends 'base.html' %}
     {% block titulo %}
@@ -14,25 +14,31 @@
 
     {% block contenido_que_cambia %}
 
-   <div class="card m-3" style="width: 20rem;">
-   <img src="https://img.freepik.com/free-vector/hand-drawn-profile-icon-set_52683-71280.jpg?w=740&t=st=1662423561~exp=1662424161~hmac=0ce1f6a9a894e52bcdd3eb6e5741fc376db1db32f7d3c8d823e1e3c3ee8b7c20" class="card-img-top" alt="...">
-  
-   <div class="card-body">
-       <p class="card-text">Name: Adrián Santander Ibarra </p>
-       <p class="card-text"></p>
-       
-       
-   </div>
- 
-    <div class="card m-3" style="width: 20rem;">
-    <img src="https://img.freepik.com/free-vector/hand-drawn-profile-icon-set_52683-71280.jpg?w=740&t=st=1662423561~exp=1662424161~hmac=0ce1f6a9a894e52bcdd3eb6e5741fc376db1db32f7d3c8d823e1e3c3ee8b7c20" class="card-img-top" alt="...">
-   
-    <div class="card-body">
-        <p class="card-text">Name: Agustina López Tejera</p>
-        <p class="card-text"> Soy de Uruguay. Soy Neuropsicóloga y profesora de inglés. Decidí hacer este curso ya que me interesa la investigación en neurociencias y la programación en Python es una habilidad indispensable. </p>
+    <div class="card-body m-3 d-flex flex-row">
+
+        <div class="card m-3" style="width: 20rem;">
+            <img src="https://img.freepik.com/free-vector/hand-drawn-profile-icon-set_52683-71280.jpg?w=740&t=st=1662423561~exp=1662424161~hmac=0ce1f6a9a894e52bcdd3eb6e5741fc376db1db32f7d3c8d823e1e3c3ee8b7c20"
+                class="card-img-top" alt="...">
+
+            <div class="card-body">
+                <p class="card-text">Name: Adrian Santander ibarra</p>
+                <p class="card-text"> Soy de México. Estudie ingenieria en computación en la UNAM llegue a coderhouse en busca de adquirir nuevos conocimientos y habilidades. Me encanta aprender y busco constantemen mejorar mis habilidades tecnologicas, ya sea en programación, bases de datos o incluso electronica. Actualmente trabajo en una startup llamada VTEX, la cual tiene un enfoque en ecommerce.</p>
+            </div>
+        </div>
+
+
+        <div class="card m-3" style="width: 20rem;">
+            <img src="https://img.freepik.com/free-vector/hand-drawn-profile-icon-set_52683-71280.jpg?w=740&t=st=1662423561~exp=1662424161~hmac=0ce1f6a9a894e52bcdd3eb6e5741fc376db1db32f7d3c8d823e1e3c3ee8b7c20"
+                class="card-img-top" alt="...">
+
+            <div class="card-body">
+                <p class="card-text">Name: Agustina López Tejera</p>
+                <p class="card-text"> Soy de Uruguay. Soy Neuropsicóloga y profesora de inglés. Decidí hacer este curso
+                    ya que me interesa la investigación en neurociencias y la programación en Python es una habilidad
+                    indispensable. </p>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
     {% endblock %}
 

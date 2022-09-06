@@ -19,14 +19,13 @@
     {% for f in films %}
 
     <div class="card m-3" style="width: 20rem;"> 
-
+        <img src="{{f.image}}" class="card-img-top" alt="greates">
         {% if f.image %}
             <img src="{{f.image.url}}" class="card-img-top" alt="...">
         {% else %}
             <img src="https://img.freepik.com/free-vector/cinema-elements-set_74855-15362.jpg?w=826&t=st=1660076293~exp=1660076893~hmac=7fe185f051eb21b938fb81fc77565fe7eb928e7a6524a9bcf8151a006c1305a0" class="card-img-top" alt="...">
         {% endif %}
         <div class="card-body">
-            <p class="card-text">Imagen: {{f.image}}</p>
             <p class="card-text">Name: {{f.name}}</p>
             <p class="card-text">Price: {{f.price}}</p>
             <p class="card-text">Year: {{f.year}}</p>
