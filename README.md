@@ -31,3 +31,19 @@ Se puede navegar libremente entre las vistas y la función busqueda del navbar n
 ### Vista form
 ![form](https://user-images.githubusercontent.com/35971687/183787696-bcb29dde-6420-43bf-a698-7d8b93c4a6c8.png)
 
+
+
+El estudiante *Adrián Santander Ibarra* realizó las siguientes tareas:
+* Creación de la NavBar y del Footer. 
+* Creación de la funcionalidad search para películas, series y reseñas. 
+* App de usuarios. 
+* Register, login, logout de usuarios. 
+* Restricciones para usuarios. 
+* Estilos con html y CSS. 
+* Tarjeta de presentación en la sección About us.
+
+La estudiante *Agustina López Tejera* realizó las siguentes tareas:
+* Apps independientes para películas, series y reseñas. Estas incluyen models, forms, views y templates. 
+* Funcionalidades de create, detail, update y delete de las series, películas y reseñas. 
+* Templates para cada una de las funciones del CRUD. 
+* Tarjeta de presentación en la sección About us.
