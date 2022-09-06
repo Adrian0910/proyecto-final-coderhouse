@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 def create_film(request):
     
     if request.method == 'POST':
-        form = Form_films(request.POST)
+        form = Form_films(request.POST, request.FILES)
 
         if form.is_valid():
             Film.objects.create(
